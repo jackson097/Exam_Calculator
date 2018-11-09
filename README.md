@@ -1,2 +1,2 @@
-# Jackson-Newlands
-Just some small side projects.
+# Exam_Calculator
+Exam Calculator
