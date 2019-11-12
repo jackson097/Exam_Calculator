@@ -12,9 +12,14 @@ while is_valid(desired_mark) == False:
 exam_weight = raw_input("Enter exam weight (%):")
 while is_valid(exam_weight) == False or exam_weight == '0':
     exam_weight = raw_input("Number not valid.\nEnter exam weight (%):")
-	
+
+# Convert values to floats now that they have been validated
+current_mark = float(current_mark)
+desired_mark = float(desired_mark)
+exam_weight = float(exam_weight)	
+
 # Calculate the mark needed
-mark_needed = calculate_mark_needed(float(current_mark), float(desired_mark), float(exam_weight)/100)
+mark_needed = calculate_mark_needed(current_mark, desired_mark, exam_weight/100)
 
 # Print results
 print_results(mark_needed, desired_mark)
