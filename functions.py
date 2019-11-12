@@ -1,14 +1,25 @@
 """
+  Determines if the number is a floating point number or not
+  Parameters: number - the value entered by the user
+"""
+def is_float(number):
+	try:
+		float(number)
+		return True
+	except:
+		return False
+
+
+"""
  Determines if the number provided is a valid float
  Parameters: number - the value entered by the user
 """
 def is_valid(number):
 	# Check if the number is a digit
-	if number.isdigit() == False:
-		return False
-	if float(number) > 100 or float(number) < 0:
-		return False
-	return True
+	if is_float(number) != False:
+		if float(number) <= 100 and float(number) >= 0:
+			return True
+	return False
 
 	
 """
@@ -28,7 +39,7 @@ def calculate_mark_needed(current_mark, desired_mark, exam_weight):
 			  desired_mark - the overall course mark desired by the student
 """
 def print_results(mark_needed, desired_mark):
-	print_statement = "\nYou will need a {:.1f}% on the final exam to achieve a final mark of {:.1f}%. ".format(float(mark_needed), float(desired_mark))
+	print_statement = "\nYou will need a {:.2f}% on the final exam to achieve a final mark of {:.2f}%. ".format(float(mark_needed), float(desired_mark))
 
 	if mark_needed > 100:
 		print(print_statement + "You're screwed.")
